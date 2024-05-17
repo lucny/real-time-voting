@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Real-Time Voting</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+      #votes {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin-bottom: 20px;
+      }
+      .vote-option {
+        font-size: 24px;
+        margin: 0 10px;
+      }
+      .button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+      }
+      #nameInput {
+        margin-bottom: 20px;
+      }
+      .names {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 18px;
+        border: 1px solid black;
+      }
+      .names#option1Names {
+        background-color: rgb(127, 204, 218);
+      }
+      .names#option2Names {
+        background-color: rgb(127, 218, 162);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Volba zaměření pro 3. ročník</h1>
+    <input id="nameInput" type="text" placeholder="Napiš jméno a příjmení">
+    <div id="votes">
+      <div class="vote-option">
+        Programování: <span id="option1">0</span>
+        <div id="option1Names" class="names"></div>
+      </div>
+      <div class="vote-option">
+        Sítě: <span id="option2">0</span>
+        <div id="option2Names" class="names"></div>
+      </div>
+    </div>
+    <div>
+      <button id="voteOption1" class="button" onclick="vote('option1')" disabled>Volím programování</button>
+      <button id="voteOption2" class="button" onclick="vote('option2')" disabled>Volím sítě</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
